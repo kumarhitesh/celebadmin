@@ -1,0 +1,34 @@
+<form (ngSubmit)="login()">
+<div class="loginContainer">
+  <div class="row">
+    <div class="offset-sm-4 col-sm-4">
+      <div class="loginHeader mt-5 mb-5">
+        <h3 class="">Celebritone Admin</h3>
+        <div style="color:red" *ngIf="wrongCredentials">Wrong Username or Password</div>
+      </div>
+      <div class="loginBody">
+          <div class="form-row">
+            <div class="form-group col-sm-12">
+              <label for="userName">Username</label>
+              <input type="text" name="username" [(ngModel)]="loginDetails.username" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-12">
+              <label for="userName">Password</label>
+              <input type="password" name="password" [(ngModel)]="loginDetails.password" class="form-control" required>
+            </div>
+          </div>
+        
+      </div>
+      <div class="loginFooter">
+        <div class="form-row">
+            <div class="col-sm-12">
+                <button class="btn btn-primary" type="submit">Login</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>

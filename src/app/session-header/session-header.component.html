@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark header-bg-1">
+  <a class="navbar-brand" href="#" (click)="checkActiveStatus('home')" routerLink='/home'>Celebritone</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" [ngClass]="{'active': (status === 'home') ? true : false}" routerLink='/home'>
+        <a class="nav-link" (click)="checkActiveStatus('home')">Home</a>
+      </li>
+      <li class="nav-item" [ngClass]="{'active': (status === 'createSession') ? true : false}" routerLink='/createSession'>
+        <a class="nav-link" (click)="checkActiveStatus('createSession')">Create Session</a>
+      </li>
+    </ul>
+  </div>
+</nav>

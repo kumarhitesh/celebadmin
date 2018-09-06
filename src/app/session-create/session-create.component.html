@@ -1,0 +1,57 @@
+<form (ngSubmit)="onFormSubmit()">
+  <div class="createSessionContainer px-3 mt-3">
+    <div class="row mb-3">
+      <div class="col-sm-12">
+        <h4 class="pull-left">Create Session</h4>
+        <div class="pull-right">
+            <button class="btn btn-primary btn-color-1" type="submit">Submit</button>
+            <button class="btn btn-warning btn-color-2" type="button" (click)="clearForm()">Clear</button>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+          <div class="form-row">
+            <div class="col-sm-6">
+              <label for="sessionName" class="pr-1 pl-1">Session Name / Celebrity Name</label>
+              <span></span>
+              <input class="form-control" id="sessionName" type="text" [(ngModel)]="sessionDetails.name" name="sessionName" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="mediaModeList">Localtion</label>
+                <input type="text" class="form-control" [(ngModel)]="sessionDetails.location" name="location">
+              </div>
+            <div class="form-group col-sm-6">
+              <label for="mediaModeList">Media Mode</label>
+              <select class="form-control" [(ngModel)]="sessionDetails.mediaMode" name="mediaModeList">
+                <option *ngFor="let mediaList of mediaModeOpp" value="{{mediaList.value}}">{{mediaList.label}}</option>
+              </select>
+            </div>
+            <div class="form-group col-sm-6">
+              <label for="sessionDuration">Duration of Session (Mins)</label>
+              <span></span>
+              <select name="mediaMode" [(ngModel)]="sessionDetails.duration" class="form-control">
+                <option *ngFor="let durationData of durationList" value="{{durationData.value}}">{{durationData.label}}</option>
+              </select>
+            </div>
+            <div class="form-group col-sm-6">
+              <label for="sessionTime">Time of Session</label>
+              <span></span>
+              <input class="form-control" id="sessionTime" type="datetime-local" [(ngModel)]="sessionDetails.time" name="sessionTime" min="{{dateDetails.currentDate}}">
+            </div>
+            <div class="form-group col-sm-6">
+              <label for="sessionImage">Image / Celebrity Avatar</label>
+              <span></span>
+              <input class="form-control" id="sessionImage" type="text" [(ngModel)]="sessionDetails.image" name="sessionImage">
+            </div>
+            <div class="form-group col-sm-12">
+              <label for="sessionDiscription">Description</label>
+              <span></span>
+              <textarea class="md-textarea form-control" id="sessionDiscription" type="text" [(ngModel)]="sessionDetails.discription" name="sessionDiscription"
+                rows="3" required></textarea>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</form>
